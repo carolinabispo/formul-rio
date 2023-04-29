@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto" , sans-serif;
+}
+
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;  /* Alinha os elementos no centro**/ 
+  justify-content: center;  /*Alinha os elementos no centro **/
+  padding: 30px;  /* Espaço interno**/
+
+}
+
+
+.container {
+    position: relative;  /* PONTO DE REFERENCIAL**/
+    max-width: 1200px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 30px;
+    box-shadow: 0 5px 10px rgba(240, 110, 3, 0.966);  /*Efeito degradê*/
+  
+
+}
+
+
+.container .cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 2;    /* manipulador de camadas */
+    transition: all 2s ease; /*Esperar acontecer*/
+    transform-origin: left;  /*Esperar acontecer */
+    
+}
+
+
+.container .cover img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*Revisão**/
+
+}
+
+.container .cover .front, .cotainer .cover .back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container #flip:checked ~ .cover {
+    transform: rotateY(-180deg);
+}
+
+ /************PROXIMA AULA*****************/
+
+.container .cover .text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .forms .form-content {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Da espaço entre eles */
+    
+}
+
+.form-content .login-form ,
+.form-content .signup-form {
+    width: calc(100% /2 - 25px);
+}
+
+
+.forms .form-content .title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: lightblue;
+}
+
+.forms .form-content .title:before {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: lightblue;
+}
+
+
+.forms .form-content .input-boxes {
+
+    margin: auto;
+    
+}
+
+
+.forms .form-content .input-box {
+
+    display: flex;
+    /* justify-content: ; */
+    align-items: center;
+    height: 50px;
+    width: 50%;
+    margin: 10px 0px;
+}
+
+.forms .input-box input {
+    
+    height: 100%;
+    width: 100%;
+    margin-left: 10px 0;
+    outline: none; /* BORDAS DA DIGITAÇÃO */
+    border: none; /* BORDAS VISIVEL */
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-left: 30px;
+}
+
+.forms .input-box input,
+.text input {
+  margin-left: 40px ;
+  
+ 
+}
+#muda-cor-conta{
+    color: red;
+}
+#muda-cor-cadastrar{
+    color: orange;
+}
+#muda-cor-cover{
+    color: red;
+}
+#muda-cor-cover-2{
+    color: orange;
+}
+.forms .form-content .text a {
+    text-decoration: none;
+    color: red;
+    display: flex;
+    margin:  1.875rem ;
+}
+
+.forms .form-content .text a:hover {
+
+    text-decoration: underline;
+}
+
+.forms .form-content .button {
+    color: white;
+    margin-top: 0;
+}
+
+
+.forms .form-content .button input {
+    color: white;
+    background-color: lightblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+   
+}
+
+.forms .form-content .button input:hover {
+    background-color: rgb(230, 172, 107);
+  
+}
+
+
+.forms .form-content label {
+    color: blue;
+    cursor: pointer;
+}
+
+.forms .form-content label:hover {
+   text-decoration: underline;
+}
+
+
+.container #flip {
+    display: none;
+}
+
+@media(max-width:730px) {
+
+   .container .cover {
+      display: none;
+   }
+   
+   .form-content .login-form,
+   .form-content .signup-form {
+    width: 100%;
+   }
+
+   .form-content .signup-form {
+    display: none;
+   }
+
+   .container #flip:checked ~ .forms .signup-form {
+    display: block;
+   }
+   .container #flip:checked ~ .forms .login-form {
+    display: none;
+   }
+
+}
+
